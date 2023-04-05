@@ -1,4 +1,4 @@
-# Phase 3 Diabetes Screening
+# Phase 4 Project - Predicting Irish Bee Populations
 
 Welcome scientists, politians, conservationists, concerned citizens, and beyond! For my fourth phase project in the Flatiron Data Science program, I have made a model that can help predict bee populations. 
 
