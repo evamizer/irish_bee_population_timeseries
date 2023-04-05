@@ -1,6 +1,6 @@
-# Phase 3 Diabetes Screening
+# Phase 4 Project - Predicting Irish Bee Populations
 
-Welcome scientists, politians, conservationists, concerned citizens, and beyond! For my fourthl phase project in the Flatiron Data Science program, I have made a model that can help screen patients for diabetes. 
+Welcome scientists, politians, conservationists, concerned citizens, and beyond! For my fourth phase project in the Flatiron Data Science program, I have made a model that can help predict bee populations. 
 
 In this project description, we will cover:
 
@@ -19,12 +19,16 @@ For this project, I used exploratory data analysis, data preparation, and modeli
 ### Business Problem
 
 #### Stake Holders:
-* Medical facilities such as primary care physician offices, or even other medical care facilities such as convenient care facilities, urgent care facilities, and hospitals. While these are my primary stake holders, it would be within the rhealm of possibility that this model could be used by insurance companies.
+* Scientists, local politicians, and conservationists in Ireland looking to monitor and increase the bee population as needed.
 
 #### Busniess Problem/Solution:
 * Declining bee populations have been a problem worldwide, but especially in Ireland, where about 1/3 of the bee species face threat of extinction. Declining populations have a real impact on local ecosystems, as well as local and national economies, so monitoring and implementation of bee-friendly practices are needed.
 
 * We want to take older data to get an idea of what we can expect to find for the current population of various species of bees, and make a plan based on those findings to increase bee populations.
+
+*While these are over 100 species of bees in Ireland, we will be focusing on three - Bombus Muscorum, Apis Melliferas Melliferas, and Adrena Haemorrhoa.
+
+![bees_chosen](data/bees.png)
 
 ### The Dataset
 
@@ -37,10 +41,10 @@ The [data]("https://www.gbif.org/dataset/6eed5110-c7b8-11de-b279-d063ea754e15") 
 
 ## Basic Walkthrough<a id='Walkthrough'></a>
 
-* **Exploring the data**: Sizing up the data, planning what needs to be done
-* **Cleaning/Preprocesing the data**: No cleaning needed, so we made a subset of all entries between 2013-2015, 
+* **Exploring the data**: Sizing up the data, planning what needs to be done.
+* **Cleaning/Preprocesing the data**: No cleaning needed, so we made a subset of all entries between 2013-2015, then investigated further into genus and then species
 * **Data Prep/Feature Engineering**: I checked for normality and homoscedasticity, implementing various ways to ready the data for time series modeling.
-* **Models**: I tried out a couple different models (ARIMA*, SARIMAX*, and Phrophet) after establishing a baseline naive model, adding in analysis for each one and trying out different ways to improve their results.
+* **Models**: I tried out a couple different models (ARIMA*, SARIMAX*, and Prophet) after establishing a baseline naive model, adding in analysis for each one and trying out different ways to improve their results.
 * **Final Model Selection**: Review the model I selected and explain why I chose it. 
 * **Business Recommendations** - Implimentation and greater uses. 
 * **Beyond**: Relfections on how I would improve my process or do something differently in the future. 
@@ -51,48 +55,75 @@ Note:
  
 ## Final Model<a id='final_model'></a>
 
-After running a few models mentioned above, I chose XGBoost after I enhanced it via GridSearchCV. 
-
-<img src="images/Final_model_results.png" alt="XGBoost Model Results" />
-
-For this project I actually made three models, one for each bee species I decided to follow. 
-
-For Bombus Moscurom, I chose a SARIMAX model with orders as follows:______________. 
+After running a few models mentioned above, I chose Meta Prophet for each of the species studied. 
 
 ## Findings <a id='findings'></a>
 
-The top factors that correlated with having diabetes were (poor) general health, high blood pressure, BMI, high cholestoral, Age, difficulty walking. I also found the correlation between mental health and diabetes to be compelling. 
+### Bombus Moscurom
+<img src="images/Bombus_predict.png" alt="Bombus Prediction" />
 
-### Age vs. Diabetes Status
-Here we can plainly see a gradual incline of the prevelence of diabetes as patients get older. There ia slight decline at the end, which might be explained by the lower life expectancy of those with diabetes (77 for men, 81 for women).
+Here we can plainly see it looks like the model is predicting a gradually lowering population. This is very troubling, but good to know.
 
-<img src="images/Age_Diabetes.png" alt="Age versus Diabetes" />
+### Apis Mellifera Mellifera
+<img src="images/Apis_predict.png" alt="Apis Prediction" />
+
+Here we can plainly see this model predicts an overall modest population increase.
+
+### Adrena Haemorrhoa
+<img src="images/Andrena_predict.png" alt="Andrena Prediction" />
+
+Here we can see the model predicts a slight increase in Andrena bees, which is great news for the bees (and us).
+
 
 
 ## Business Recommendations <a id='busrec'></a>
 
 **Basic Use Function**
-When receiving a new patient or even reviewing updated information for a current patient, doctors and nurses would be able to input the basic data points needed for the model to see if a patient might have diabetes (diagnosed or not). This can be implimented into their workflow via an add-on to software they currently use, or as a standalone application.
+
+When conducting newer surveys, you will be able to compare it to the predicted sightings of each species.
+
 
 **Recommendation**
 
-You will want to keep an eye out for **high blood pressure, high cholesterol, poor general health, elevated BMI, and difficulty walking, especially in older and female patients.**
+Should newer surveying result in a **higher** count than predicted or within the range predicted, I would reccommend the following:
 
-While this model can be useful for inputting data on new and existing patients, it shows that the most influental parameters could be examined to utilize in an action plan to improve the patients health.
+* Conduct further analysis to see if various outside factors can account for the growth. See if population locations shifted/remained constant, if surveying efforts have changed or been expanded, and cross reference any past efforts (if any) had been made in relation to conservation.
 
-For example, while someone cannot make themselves younger or erase a stroke from their medical history, they could work to:
-* lower their blood pressure
-* lower their cholesterol
-* get their BMI to a healthy level
-* take steps to improve their general physical health
-* refer to mental health services such as counseling, therapy, etc. as needed
+Should newer surveying result in a **lower** count than predicted, I would reccommend the following:
+
+### For Bombus Muscorum:
+
+* Since this species is often found in urban areas, effort can be taken to increase the population of flowering plants within public spaces. On a private citizen level, the public could be encouraged to suppliment their gardens, window boxes, and green spaces with flowering plants.
+
+* If there are sightings nearby each other, efforts should focused in the space between the two sightings to encourage connection.
+When designing new urban spaces, care should be exhibited when developing the land as not to disturb any ground cavities that could host a nest.
+
+### For Apis mellifera mellifera:
+
+* Being a special case in that these bees can be both wild and kept for honey production and pollination, there should be more efforts put into expanding the Native Irish Honey Bee Society and their prospective projects to promote native beekeeping, breeding and producing strong colonies, and monitoring the health of the population, as well as spread awareness.
+* When it comes to suspected wild mellifera sightings, if there are sightings relatively nearby each other, efforts should focused in the space between the two sightings to encourage connection.
+
+### For Andrena :
+
+* Plant more flowering spring plants along the short grass swards, especially along roads, trails, and trackways.
+
+### For all species:
+A common problem with the publics perception of bees is that they all sting and are dangerous, and they are often confused with other stinging bugs.
+
+Public awareness campaigns should help educated the public on the varieties of bees in their locality and region, their needs, and their benefits. Raising awareness and giving a call to action to help make a more hospitible and symbiotic environment will help connect people who want to help with the know-how to do so.
+
+In addtion, this public awareness might spur more citizens to join efforts in future surveys, especially if they know what they are seeing is important.
+
+Lastly, more widespread efforts should be taken to create a more hospitible environment for wild bees that rely on pollen by rewilding underutilized or unused pastures, farmlands, and roadway shoulders with a focus on native plants attractive to most bees and plants attractive to specific species.
 
 ## What's Next<a id='next'></a>
-I would like to explore the original data from the original dataset (rather than this subset) and do a bit more exploratory analysis on that. This dataset explored pretty broad topics, but I'd like to see if going into more detail in each topic made more of a difference rather than the broad topic on it's own.
+I would love to explore more into the locations that these sightings occured, and compare it to the species spotted and known characteristics that the species needs. I could see if any recent changes have happened that would affect the population (construction, local weather events, etc).
 
-In addition, I would like to explore more data derived not from the patients opinion, but from a measurable quantity outside of that to see if we can get away from possible personal bias.
+As we know, there is a huge difference between studying an organism in a contained environment, and a tiny one out flying about, so a few more things are needed to be considered when conducting surveys out in the feild like this.
 
-On a more data-centric note, I think next time I will change the column titles after OHE-ing, as continually refering back to my legend got pretty old, pretty fast. 
+Because of this, I would like to delve more into the process used to gather information on sightings both from this survey and current ones - from the actual process to evaluate a sighting, to the infrastructure of people involved, and their habits and involvement in the process. From that information, I would like to create a methodical plan to best coordinate volunteer efforts to ensure we are spreading out evenly enough to cover enough ground and avoid pitfalls such as volunteers being in close proximity of time and space when out spotting, or frequenting the same space repeatedly.
 
-Thank you for taking the time to read through this, and I hope it helped inform and awaken your curiosity!
+When it comes to working with the data itself, I would love to refine our Meta Prophet models more, and explore other models to see how they compare.
+
+Lastly, thank you for taking the time to read through this, and I hope it helped inform and awaken your curiosity!
 
