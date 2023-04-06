@@ -1,4 +1,4 @@
-# Phase 4 Project - Predicting Irish Bee Populations
+# Predicting Irish Bee Populations
 
 Welcome scientists, politians, conservationists, concerned citizens, and beyond! For my fourth phase project in the Flatiron Data Science program, I have made a model that can help predict bee populations. 
 
@@ -11,6 +11,9 @@ In this project description, we will cover:
 * [***Business Recommendations:***](#busrec) Recommendations based on model findings
 * [***What's Next:***](#next) What I'd like to do to improve further
 
+Before we get started, here are some links to navigate this project:
+* [The notebook]("https://github.com/evamizer/irish_bee_population_timeseries/blob/9fe4d7eb85467279982f4b3ed54af945cc241cd0/irish_bee_population_timeseries.ipynb")
+* [The original dataset]("https://www.gbif.org/dataset/6eed5110-c7b8-11de-b279-d063ea754e15")
 
 ## Project Overview<a id='project-overview'></a>
 
@@ -28,7 +31,7 @@ For this project, I used exploratory data analysis, data preparation, and modeli
 
 *While these are over 100 species of bees in Ireland, we will be focusing on three - Bombus Muscorum, Apis Melliferas Melliferas, and Adrena Haemorrhoa.
 
-![bees_chosen](images/bees.png)
+![bees_chosen](data/bees.png)
 
 ### The Dataset
 
@@ -127,3 +130,20 @@ When it comes to working with the data itself, I would love to refine our Meta P
 
 Lastly, thank you for taking the time to read through this, and I hope it helped inform and awaken your curiosity!
 
+## Non-Technical Presentation
+* [Here you will find my slideshow presentation](
+* [The presentation]("https://github.com/evamizer/irish_bee_population_timeseries/blob/9fe4d7eb85467279982f4b3ed54af945cc241cd0/bees_of_ireland.pdf"))
+
+## Repository Structure:
+├── data
+    └── bee_survey.csv
+├── images
+    └── andrena_predict.png
+    └── apis_predict.png
+    └── AROI_Pro.png
+    └── bees.png
+    └── bombus_predict.png
+ ├── .gitignore
+ ├── README.md
+ ├── bees_of_ireland.pdf
+ └── irish_bee_population_timeseries.ipynb
