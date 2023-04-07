@@ -12,8 +12,8 @@ In this project description, we will cover:
 * [***What's Next:***](#next) What I'd like to do to improve further
 
 Before we get started, here are some links to navigate this project:
-* [The notebook]("https://github.com/evamizer/irish_bee_population_timeseries/blob/9fe4d7eb85467279982f4b3ed54af945cc241cd0/irish_bee_population_timeseries.ipynb")
-* [The original dataset]("https://www.gbif.org/dataset/6eed5110-c7b8-11de-b279-d063ea754e15")
+* [The notebook](https://github.com/evamizer/irish_bee_population_timeseries/blob/9fe4d7eb85467279982f4b3ed54af945cc241cd0/irish_bee_population_timeseries.ipynb)
+* [The original dataset](https://www.gbif.org/dataset/6eed5110-c7b8-11de-b279-d063ea754e15)
 
 ## Project Overview<a id='project-overview'></a>
 
@@ -35,7 +35,7 @@ For this project, I used exploratory data analysis, data preparation, and modeli
 
 ### The Dataset
 
-The [data]("https://www.gbif.org/dataset/6eed5110-c7b8-11de-b279-d063ea754e15") we are using today is the dataset on the distribution of bees in Ireland from both published and unpublished sources spanning from 1884 to 2022, initially compiled as part of a Trinity College Dublin/Queen's University Belfast HEA funded research project on the conservation of Irish bees (2003-2006; Úna Fitzpatrick & Tomás Murray). It was used for conservation purposes, including the development of a Red List, which evaluates species on their extinction risk. It is now deposited with the National Biodiversity Data Centre and is managed by Úna Fitzpatrick.
+The [data](https://www.gbif.org/dataset/6eed5110-c7b8-11de-b279-d063ea754e15) we are using today is the dataset on the distribution of bees in Ireland from both published and unpublished sources spanning from 1884 to 2022, initially compiled as part of a Trinity College Dublin/Queen's University Belfast HEA funded research project on the conservation of Irish bees (2003-2006; Úna Fitzpatrick & Tomás Murray). It was used for conservation purposes, including the development of a Red List, which evaluates species on their extinction risk. It is now deposited with the National Biodiversity Data Centre and is managed by Úna Fitzpatrick.
 
 #### Features Used:
 * **eventDate:** Object, date of sighting
@@ -63,17 +63,17 @@ After running a few models mentioned above, I chose Meta Prophet for each of the
 ## Findings <a id='findings'></a>
 
 ### Bombus Moscurom
-<img src="images/Bombus_predict.png" alt="Bombus Prediction" />
+<img src="images/bombus_predict.png" alt="Bombus Prediction" />
 
 Here we can plainly see it looks like the model is predicting a gradually lowering population. This is very troubling, but good to know.
 
 ### Apis Mellifera Mellifera
-<img src="images/Apis_predict.png" alt="Apis Prediction" />
+<img src="images/apis_predict.png" alt="Apis Prediction" />
 
 Here we can plainly see this model predicts an overall modest population increase.
 
 ### Adrena Haemorrhoa
-<img src="images/Andrena_predict.png" alt="Andrena Prediction" />
+<img src="images/andrena_predict.png" alt="Andrena Prediction" />
 
 Here we can see the model predicts a slight increase in Andrena bees, which is great news for the bees (and us).
 
@@ -131,19 +131,18 @@ When it comes to working with the data itself, I would love to refine our Meta P
 Lastly, thank you for taking the time to read through this, and I hope it helped inform and awaken your curiosity!
 
 ## Non-Technical Presentation
-* [Here you will find my slideshow presentation](
-* [The presentation]("https://github.com/evamizer/irish_bee_population_timeseries/blob/9fe4d7eb85467279982f4b3ed54af945cc241cd0/bees_of_ireland.pdf"))
+* [Here you will find my slideshow presentation](https://github.com/evamizer/irish_bee_population_timeseries/blob/9fe4d7eb85467279982f4b3ed54af945cc241cd0/bees_of_ireland.pdf)
 
-## Repository Structure:
-├── data
-    └── bee_survey.csv
-├── images
-    └── andrena_predict.png
-    └── apis_predict.png
-    └── AROI_Pro.png
-    └── bees.png
-    └── bombus_predict.png
- ├── .gitignore
- ├── README.md
- ├── bees_of_ireland.pdf
- └── irish_bee_population_timeseries.ipynb
+ ## Repository Structure:
+
+    ├── data
+        └── bee_survey.csv
+    ├── images
+        └── andrena_predict.png
+        └── apis_predict.png
+        └── bees.png
+        └── bombus_predict.png
+     ├── .gitignore
+     ├── README.md
+     ├── bees_of_ireland.pdf
+     └── irish_bee_population_timeseries.ipynb
