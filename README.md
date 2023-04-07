@@ -31,7 +31,7 @@ For this project, I used exploratory data analysis, data preparation, and modeli
 
 *While these are over 100 species of bees in Ireland, we will be focusing on three - Bombus Muscorum, Apis Melliferas Melliferas, and Adrena Haemorrhoa.
 
-![bees_chosen](data/bees.png)
+<img src="images/bees.png" alt="bees" />
 
 ### The Dataset
 
